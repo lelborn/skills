@@ -1,0 +1,17 @@
+{
+  "name": "lelborn-skills",
+  "version": "0.1.0",
+  "description": "My personal agent skills book. 📕",
+  "keywords": [
+    "skills",
+    "skills-sh"
+  ],
+  "homepage": "https://github.com/lelborn/skills#readme",
+  "bugs": {
+    "url": "https://github.com/lelborn/skills/issues"
+  },
+  "repository": "github:lelborn/skills",
+  "license": "GPL-3.0",
+  "author": "lelborn <inbox@elborn.co>",
+  "private": true
+}
