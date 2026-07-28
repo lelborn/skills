@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **README** — document github-workflow skill.
 - **package.json** — renamed to `lelborn-skills` and trimmed to repo metadata only (removed npm `files` field) so `npx skills` resolves to the CLI, not this repo, when run from the project directory.
 
 ### Added
