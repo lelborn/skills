@@ -21,3 +21,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **comment-code** — add constructive comments to source files, or audit existing comments read-only.
 - **challenge** — stress-test a plan or decision with sharp questions and a sharpened outcome.
 - **github-workflow** — govern every GitHub-touching action with pre/post-work gates: account resolution, issues, projects, milestones, branches, PRs, releases, and dependabot.
+- **sc-init** — initialise a SuiteCloud Account Customization project with agent skills, Prettier/ESLint, docs, and git.

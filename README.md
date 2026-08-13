@@ -29,6 +29,7 @@ Add `-g` if you'd rather have them everywhere than in the one project.
 - **[comment-code](skills/comment-code/SKILL.md)** — Comment a targeted source file constructively and concisely: detect the language, then add only the comments that earn their place — the why, not the what. Also audits existing comments (read-only) on request. Never touches logic, leaves good comments alone, and flags where clearer code would beat a comment.
 - **[review-file](skills/review-file/SKILL.md)** — Deep review of one named file: structure, readability, security, comments, external API alignment, project docs, and split/cohesion. Produces a severity-ranked report and changes nothing until you ask.
 - **[challenge](skills/challenge/SKILL.md)** — Stress-test a plan, decision, or idea by interrogating it hard — one sharp question at a time, each with a recommended answer — surfacing hidden assumptions, failure modes, and expensive-to-reverse choices, then landing on a sharpened plan.
+- **[sc-init](skills/sc-init/SKILL.md)** — Initialise a new or empty NetSuite SuiteCloud (SDF) Account Customization project: install agent skills, set up Prettier and ESLint, write package.json scripts, .gitignore, README, docs and CHANGELOG, then git init.
 
 Check back for new or updated skills. Changes are logged in the [changelog](CHANGELOG.md).
 
