@@ -16,21 +16,21 @@ Work in the order below. Each stage depends on the previous one — the formatte
 
 ## 0. Gather inputs first
 
-Most inputs are derivable. Only ask about what genuinely can't be worked out, and ask in one go rather than
-drip-feeding questions.
+Most inputs are derivable. Ask everything you need in **one** message rather than blocking twice.
 
 Derive, don't ask:
 
-- **Project name** — read `projectname` from `src/manifest.xml`. Say what was found and carry on. Only ask
-  if the file is missing, or if the value is an obvious leftover default (`test-project`, `suitecloud-project`)
-  that the user probably meant to change.
+- **Project name** — read `projectname` from `src/manifest.xml`. Say what was found and carry on. Only query
+  it if the file is missing, or if the value is a stock default (`test-project`, `suitecloud-project`) — and
+  when querying, say it may well be deliberate rather than assuming it's wrong.
 - **Skills to install** — always the twelve listed in stage 1.
-- **Versions** — always latest; never carry a pinned version over from a previous run of this skill.
+- **Versions** — always latest; never carry a pinned version over from a previous run of this skill, and
+  never copy a literal version number out of a docs page.
 
 Ask about:
 
-- **What the project does** — one sentence for the README. If the user doesn't know yet, write the
-  placeholder text and move on rather than blocking on it.
+- **What the project does** — one sentence for the README. Ask once, alongside the project name if you're
+  querying that too. If the user doesn't answer or doesn't know yet, write the placeholder and move on.
 
 Existing files listed here are **overwritten** with the exact contents given. `package.json` is the
 exception — merge into it as described in stage 3. Before overwriting anything that looks hand-edited
@@ -38,16 +38,31 @@ exception — merge into it as described in stage 3. Before overwriting anything
 
 ## 1. Agent skills
 
-Create `.claude` **before** installing. Without it the CLI can silently skip creating the symlink, and the
-skills then won't be visible to Claude:
+### List before installing
+
+The CLI **silently drops** requested skill names that don't exist — it selects the ones it recognises,
+reports success, and never mentions the missing one. So list each source first and confirm every name is
+really there:
+
+```bash
+npx skills add lelborn/skills -l -y
+npx skills add oracle/netsuite-suitecloud-sdk -l -y
+```
+
+Compare the output against the twelve names below. If a name is missing, **stop and report it** rather than
+installing a partial set — and don't substitute a similar-looking name on your own initiative. Repos rename
+skills; the fix belongs in this file, not in a one-off judgement call.
+
+### Install
+
+Create `.claude` first, in case the CLI needs it:
 
 ```bash
 mkdir -p .claude
 ```
 
-Install with `-a claude` (if the CLI rejects that agent name, retry with `-a claude-code`), symlinked rather
-than copied — so **do not** pass `--copy` — and `-y` so it doesn't prompt. Run the two batches separately,
-in this order.
+Use `-a claude-code`. (`-a claude` is rejected as an invalid agent name — don't waste a run on it.) Pass
+`-y` so it doesn't prompt, and don't pass `--copy`. Run the two batches separately, in this order.
 
 Batch 1:
 
@@ -56,9 +71,9 @@ npx skills add lelborn/skills \
   -s conventional-commits \
   -s keep-a-changelog \
   -s keep-it-human \
-  -s semantic-versioning \
+  -s semver \
   -s review-file \
-  -a claude -y
+  -a claude-code -y
 ```
 
 Batch 2:
@@ -72,17 +87,52 @@ npx skills add oracle/netsuite-suitecloud-sdk \
   -s netsuite-suitescript-upgrade \
   -s netsuite-sdf-safe-guide \
   -s netsuite-suitescript-learning \
-  -a claude -y
+  -a claude-code -y
 ```
 
-Then verify, rather than trusting the CLI's exit code: each named skill exists under `.agents/skills/`,
-each `.claude/skills/<name>` is a **symlink** to it, and `skills-lock.json` was written. If a symlink is
-missing, create it manually rather than re-running the whole batch.
+The Oracle repo carries three more skills (`netsuite-ai-connector-instructions`, `netsuite-finance-analyst`,
+`netsuite-sdf-project-documentation`). Leaving them out is deliberate, not an oversight.
+
+### Fix the layout
+
+Under some agent CLIs (cursor-cli, at least as of `skills@1.5.22`) the installer **copies rather than
+symlinks even without `--copy`**, and its Installation Summary prints `.agents/skills/<name>` paths that
+were never created — the real files land in `.claude/skills/<name>`. Don't trust the summary; check the
+disk. Then normalise the layout so `.agents/skills/` holds the canonical copy and `.claude/skills/` holds
+symlinks:
+
+```bash
+mkdir -p .agents/skills
+for d in .claude/skills/*; do
+  name=$(basename "$d")
+  if [ -L "$d" ]; then
+    echo "skip symlink: $name"
+    continue
+  fi
+  if [ -d "$d" ]; then
+    if [ -e ".agents/skills/$name" ]; then
+      echo "conflict: .agents/skills/$name already exists, skipping $name"
+      continue
+    fi
+    mv "$d" ".agents/skills/$name"
+    ln -s "../../.agents/skills/$name" "$d"
+    echo "moved+linked: $name"
+  fi
+done
+```
+
+Then verify: every named skill exists under `.agents/skills/`, every `.claude/skills/<name>` is a symlink to
+`../../.agents/skills/<name>`, and `skills-lock.json` lists all twelve. Fix any stragglers by hand rather
+than re-running a whole batch.
+
+Note that `ls` run in parallel with an install returns stale results — verify only after the install
+command has exited.
 
 ## 2. Prettier and ESLint
 
-Read the current install docs before installing — flags and recommended setup do change. Prettier's docs
-currently recommend pinning the exact version locally, so resolve the latest version and pin that:
+Prettier's docs recommend pinning the exact version locally. Resolve the latest version yourself via
+`prettier@latest` — the version literal printed in the docs is whatever was current when the page was
+written, and is not the instruction:
 
 ```bash
 npm install --save-dev --save-exact prettier@latest
@@ -100,6 +150,9 @@ npm install --save-dev eslint @eslint/js globals eslint-config-prettier
 
 Do **not** run the interactive `npm init @eslint/config` — it will produce a different config from the one
 this project expects.
+
+`npm warn Unknown env config "devdir"` appears on every npm and npx call in this environment. It is noise;
+don't chase it.
 
 **`.prettierignore`**
 
@@ -206,15 +259,15 @@ module.exports = [
 ];
 ```
 
-If `require('eslint-config-prettier')` fails because the package has gone ESM-only, change **only** the
-import style — keep the same object layout, the same `ignores`, `files` globs, `globals`, and rule order,
-with `prettier` last so it can turn off conflicting rules.
+`eslint-config-prettier` is CommonJS today, so `require` works — no need to check. If a future version goes
+ESM-only and `require` fails, change **only** the import style: keep the same object layout, `ignores`,
+`files` globs, `globals`, and rule order, with `prettier` last so it can turn off conflicting rules.
 
 ## 3. package.json, .gitignore, README, docs
 
 In `package.json`, replace `scripts` exactly as below. Keep the existing Jest and
 `@oracle/suitecloud-unit-testing` dependencies, plus the Prettier/ESLint packages just installed — don't
-rewrite `devDependencies` wholesale.
+rewrite `devDependencies` wholesale. Leave the `"name"` field alone.
 
 ```json
 {
@@ -331,6 +384,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial project setup.
 ```
 
+Soft line breaks inside those markdown paragraphs are cosmetic — Prettier settles them either way. Don't
+re-read the file to diff whitespace against this one.
+
 Create the linked files even when their content is only a placeholder — a README pointing at a missing
 `docs/README.md` is worse than a thin one.
 
@@ -341,7 +397,9 @@ npm run format
 npm run check
 ```
 
-Expect the XML in `src/manifest.xml` and `src/deploy.xml` to reformat on the first pass. Fix any failures
+Prettier reformats whatever doesn't already match — typically `src/manifest.xml`, plus any of
+`jest.config.js`, `jsconfig.json`, `package.json`, `suitecloud.config.js` and the sample test. Files left
+unchanged (often `src/deploy.xml`) are fine, not a sign something was skipped. Fix any `check` failures
 before finishing.
 
 Report what was done, along with anything that needed a judgement call — a skill that had to be symlinked
