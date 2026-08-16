@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **keep-it-human** — rewrite AI-sounding text so it reads naturally without changing meaning.
 - **handoff** — compact a session into a handoff document for a fresh agent or session to continue from.
 - **comment-code** — add constructive comments to source files, or audit existing comments read-only.
+- **review-file** — deep review of one named file; reports findings and changes nothing until asked.
 - **challenge** — stress-test a plan or decision with sharp questions and a sharpened outcome.
-- **github-workflow** — govern every GitHub-touching action with pre/post-work gates: account resolution, issues, projects, milestones, branches, PRs, releases, and dependabot.
-- **sc-init** — initialise a SuiteCloud Account Customization project with agent skills, Prettier/ESLint, docs, and git.
+- **sc-init** — initialise a SuiteCloud Account Customization project with agent skills, Prettier/ESLint, and docs.
+- **tooling-init** — set up a JavaScript/TypeScript project's Prettier, ESLint, and Playwright tooling with ignore rules, IDE settings, and project-aware package.json scripts, after evaluating the project.
