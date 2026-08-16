@@ -36,14 +36,15 @@ only ask the user when something is genuinely ambiguous (see the end of this sta
   and Playwright need it to exist.
 - **Package manager** — read the lockfile. This drives every install and init command from here on:
 
-  | Lockfile | Manager | Install dev dep | Create/init runner |
-  | --- | --- | --- | --- |
-  | `package-lock.json` | npm | `npm install -D` | `npm init <pkg>@latest` |
-  | `pnpm-lock.yaml` | pnpm | `pnpm add -D` | `pnpm create <pkg>` |
-  | `yarn.lock` | yarn | `yarn add -D` | `yarn create <pkg>` |
-  | `bun.lock` / `bun.lockb` | bun | `bun add -d` | `bun create <pkg>` |
+    | Lockfile                 | Manager | Install dev dep  | Create/init runner      |
+    | ------------------------ | ------- | ---------------- | ----------------------- |
+    | `package-lock.json`      | npm     | `npm install -D` | `npm init <pkg>@latest` |
+    | `pnpm-lock.yaml`         | pnpm    | `pnpm add -D`    | `pnpm create <pkg>`     |
+    | `yarn.lock`              | yarn    | `yarn add -D`    | `yarn create <pkg>`     |
+    | `bun.lock` / `bun.lockb` | bun     | `bun add -d`     | `bun create <pkg>`      |
 
-  No lockfile? Default to npm and say so.
+    No lockfile? Default to npm and say so.
+
 - **TypeScript vs JavaScript** — `tsconfig.json` or any `*.ts`/`*.tsx` means TS. This changes the ESLint
   install and config, and Playwright's `--lang`.
 - **Module type** — `"type": "module"` in package.json means ESM. It matters less than you'd think here,
@@ -121,8 +122,15 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
 	globalIgnores(['dist/**', 'build/**', 'coverage/**', 'playwright-report/**', 'test-results/**']),
-	{ files: ['**/*.{js,mjs,cjs}'], plugins: { js }, extends: ['js/recommended'] },
-	{ files: ['**/*.{js,mjs,cjs}'], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+	{
+		files: ['**/*.{js,mjs,cjs}'],
+		plugins: { js },
+		extends: ['js/recommended'],
+	},
+	{
+		files: ['**/*.{js,mjs,cjs}'],
+		languageOptions: { globals: { ...globals.browser, ...globals.node } },
+	},
 	// Keep last: turn off rules that conflict with Prettier.
 	eslintConfigPrettier,
 ]);

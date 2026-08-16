@@ -9,11 +9,11 @@ Pressure-test the user's plan, decision, or idea by interrogating it — not to 
 
 ## Stance
 
-Adversarial toward the *idea*, never the *person*. Attack the plan's weakest joints until they hold or get reinforced; be direct, even blunt. But **steelman first** — read the code/doc/ticket, make sure you understand what's proposed and why, and play back your understanding. Challenging a plan you've misread wastes time and burns trust.
+Adversarial toward the _idea_, never the _person_. Attack the plan's weakest joints until they hold or get reinforced; be direct, even blunt. But **steelman first** — read the code/doc/ticket, make sure you understand what's proposed and why, and play back your understanding. Challenging a plan you've misread wastes time and burns trust.
 
 ## One question at a time
 
-The rule that makes this work. A wall of ten questions paralyzes — the user answers none of them well and the thread is lost. A single sharp question gets a real answer the *next* question can build on. Ask the most important open question, wait, and let the answer steer where you go next. Resist dumping everything at once, however thorough it feels.
+The rule that makes this work. A wall of ten questions paralyzes — the user answers none of them well and the thread is lost. A single sharp question gets a real answer the _next_ question can build on. Ask the most important open question, wait, and let the answer steer where you go next. Resist dumping everything at once, however thorough it feels.
 
 ## Carry a recommended answer
 
@@ -26,6 +26,7 @@ Never spend a question on something findable yourself — codebase, docs, git hi
 ## Aim at what's load-bearing
 
 Go after what would sink the plan or be painful to undo, not trivia:
+
 - **Unstated assumptions** — the "this'll obviously work" beliefs it rests on.
 - **The riskiest dependency** — most likely to fail, be slow, or not exist as imagined.
 - **The unnamed failure mode** — "what happens when this breaks / doubles / gets abused?"

@@ -15,9 +15,10 @@ Think in **clusters**, not single instances — any one of these appears in good
 
 **Inflated significance** — hype the text hasn't earned: "stands as a testament to", "plays a crucial/pivotal role", "underscores the importance of", "in today's fast-paced/ever-evolving world", "in an increasingly digital landscape". And trailing "-ing" significance clauses: "..., highlighting the need for...", "..., showcasing its ability to..." — usually just delete them.
 
-**Overused vocabulary** — one is fine, three in a paragraph is a giveaway: *delve, tapestry, showcase, crucial, pivotal, realm, navigate, foster, robust, seamless, leverage, underscore, testament, boasts, elevate, myriad, landscape, ever-evolving, game-changer, unlock, harness, embark, resonate, meticulous, bustling.* Use the plain word the author would.
+**Overused vocabulary** — one is fine, three in a paragraph is a giveaway: _delve, tapestry, showcase, crucial, pivotal, realm, navigate, foster, robust, seamless, leverage, underscore, testament, boasts, elevate, myriad, landscape, ever-evolving, game-changer, unlock, harness, embark, resonate, meticulous, bustling._ Use the plain word the author would.
 
 **Sentence-shape tics:**
+
 - **Forced rule of three:** "fast, reliable, and scalable" — keep what matters, drop the item added for rhythm.
 - **Negative parallelism:** "It's not just X — it's Y", "This isn't about X. It's about Y." — say the positive thing directly.
 - **False ranges:** "from startups to enterprises" as filler.
@@ -25,6 +26,7 @@ Think in **clusters**, not single instances — any one of these appears in good
 - **Hollow "this":** "This allows for", "This ensures that" pointing at nothing specific.
 
 **Formatting habits:**
+
 - **Em-dashes** — the strongest surface tell; models overuse them badly. Cut hard (most become a comma, full stop, or parentheses). An occasional one is fine, but when in doubt remove it; same for en-dashes used as em-dashes.
 - **Scattered bold** on a phrase every other sentence — reserve it for the rare word that needs it.
 - **Bullet lists where every item is `**Bolded lead-in:**` + clause** — turn back into prose unless it's genuinely a list.
@@ -32,12 +34,14 @@ Think in **clusters**, not single instances — any one of these appears in good
 - **Mismatched curly/straight quotes** — make them consistent with the document.
 
 **Filler and hedging:**
+
 - **Generic conclusions:** "In conclusion,", "Overall,", "Ultimately," restating what was said — cut, or end on something with content.
 - **Hedge stacks:** "It's important to note", "it's worth mentioning", "generally", "arguably" — one is honest, three is throat-clearing.
 - **Chatbot residue:** "Certainly!", "Great question", "I hope this helps!", "Let's dive in", "As an AI…", cutoff disclaimers, "Let's be honest,".
 - **Both-sides padding:** "While there are challenges, the future looks bright" — say the actual assessment.
 
 **Vague sourcing and invented specifics:**
+
 - "Experts say", "studies show", "many believe" with nothing behind them — name the source or drop the appeal.
 - Plausible but unverified numbers, dates, or quotes the model may have invented — flag them for the author; never launder a fabrication into cleaner prose.
 
@@ -51,7 +55,7 @@ Think in **clusters**, not single instances — any one of these appears in good
 
 ## Match the author's voice
 
-Given samples of their writing, study sentence length, vocabulary level, contractions, formality, and how they open and close, then rewrite *toward that voice* — the author on a good day, not a blander person. Without samples, aim for clear, plain prose at the formality the context calls for.
+Given samples of their writing, study sentence length, vocabulary level, contractions, formality, and how they open and close, then rewrite _toward that voice_ — the author on a good day, not a blander person. Without samples, aim for clear, plain prose at the formality the context calls for.
 
 ## Don't overcorrect
 

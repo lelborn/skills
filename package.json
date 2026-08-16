@@ -1,17 +1,25 @@
 {
-  "name": "lelborn-skills",
-  "version": "0.1.0",
-  "description": "My personal skill book. 📕",
-  "keywords": [
-    "skills",
-    "skills-sh"
-  ],
-  "homepage": "https://github.com/lelborn/skills#readme",
-  "bugs": {
-    "url": "https://github.com/lelborn/skills/issues"
-  },
-  "repository": "github:lelborn/skills",
-  "license": "GPL-3.0",
-  "author": "lelborn <inbox@elborn.co>",
-  "private": true
+	"name": "lelborn-skills",
+	"version": "0.1.0",
+	"description": "My personal skill book. 📕",
+	"keywords": [
+		"skills",
+		"skills-sh"
+	],
+	"homepage": "https://github.com/lelborn/skills#readme",
+	"bugs": {
+		"url": "https://github.com/lelborn/skills/issues"
+	},
+	"repository": "github:lelborn/skills",
+	"license": "GPL-3.0",
+	"author": "lelborn <inbox@elborn.co>",
+	"private": true,
+	"scripts": {
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"check": "prettier --check ."
+	},
+	"devDependencies": {
+		"prettier": "3.9.6"
+	}
 }

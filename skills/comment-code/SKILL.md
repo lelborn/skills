@@ -14,7 +14,7 @@ Work on the specific file (or files) the user named, and no others. Don't fan ou
 ## Two jobs — know which one you're doing
 
 - **Commenting** edits the file: you add or fix comments on the target.
-- **Reviewing / checking** is read-only by default: when the user asks you to *check*, *review*, *verify*, or *look for ambiguity or clarity* in comments, that is an audit, not a rewrite. Read the file, report a short list of the specific spots with a real problem (with line references), and stop. Then edit only the spots you flagged — and only after the user says go, unless the fix is trivial and unambiguous.
+- **Reviewing / checking** is read-only by default: when the user asks you to _check_, _review_, _verify_, or _look for ambiguity or clarity_ in comments, that is an audit, not a rewrite. Read the file, report a short list of the specific spots with a real problem (with line references), and stop. Then edit only the spots you flagged — and only after the user says go, unless the fix is trivial and unambiguous.
 
 Conflating these is the classic failure: asked to "check for ambiguity," an agent re-processes and rewrites every comment in every file. Don't. Checking means reading and reporting; editing means changing the few things that are genuinely wrong. A request to review comments is never a licence to re-touch the whole file.
 
@@ -24,7 +24,7 @@ Read the whole target file before writing or judging a comment — you can't tel
 
 ## Comment the why, never the what
 
-Code already says *what* it does; a comment that restates it (`i++ // increment i`) is pure cost. Spend comments on what the code *can't* say:
+Code already says _what_ it does; a comment that restates it (`i++ // increment i`) is pure cost. Spend comments on what the code _can't_ say:
 
 - **Intent / rationale** — why this approach, and why not the obvious alternative.
 - **Non-obvious decisions and trade-offs** — the constraint or context that forced this shape.
@@ -33,7 +33,7 @@ Code already says *what* it does; a comment that restates it (`i++ // increment 
 - **Workarounds** — the bug or limitation being handled, with an issue link where possible.
 - **Public contracts** — for exported symbols, a short doc comment: what it's for, its inputs/outputs, any surprising behaviour.
 
-If the only honest comment you could write restates the code, that's a signal the *code* is unclear — the fix is a clearer name or an extracted function, not a comment papering over it (see the `refactor` skill). Say so rather than adding a "what" comment.
+If the only honest comment you could write restates the code, that's a signal the _code_ is unclear — the fix is a clearer name or an extracted function, not a comment papering over it (see the `refactor` skill). Say so rather than adding a "what" comment.
 
 ## Be brief and well-placed
 
@@ -43,7 +43,7 @@ If the only honest comment you could write restates the code, that's a signal th
 
 ## Once a comment is good, leave it alone
 
-A comment that already carries its weight is finished work. Don't rephrase it into your own style, and don't re-touch a file that's already well commented — running this skill again on clean code should be close to a no-op. Every edit needs a concrete reason you could say out loud: *this one is ambiguous / stale / wrong / a bare restatement*. If you can't name what's wrong with a comment, that is your answer — it stays.
+A comment that already carries its weight is finished work. Don't rephrase it into your own style, and don't re-touch a file that's already well commented — running this skill again on clean code should be close to a no-op. Every edit needs a concrete reason you could say out loud: _this one is ambiguous / stale / wrong / a bare restatement_. If you can't name what's wrong with a comment, that is your answer — it stays.
 
 This is what confident commenting looks like: make the call, then trust it instead of churning the file. Second-guessing a sound comment into a rewrite adds a noisy diff and erodes trust, and gains nothing. A near-empty diff on a well-commented file is a success, not a sign you missed something.
 

@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local skills CLI installs of this book (not the published skills/)
+.agents/
+.claude/
+.codex/
+skills-lock.json

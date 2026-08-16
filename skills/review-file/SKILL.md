@@ -1,17 +1,17 @@
 ---
 name: review-file
 description: >-
-  Deep review of one named file — structure and definition order, readability,
-  security, comment quality, alignment with the external APIs it calls, project
-  documentation coverage, and whether any part of it should be its own module.
-  Produces a severity-ranked report and changes nothing until asked. Use this
-  whenever the user points at a single file and wants a considered look:
-  "review-file this", "sanity-check ni_http.js", "take a closer look at this
-  module", "review this for security and comments", "does this match the docs?",
-  "is this documented under docs/?", "anything here that should be split out?".
-  Use it even when the ask is vague ("what do you make of this file?") — a
-  named file plus a request for an opinion is a file review. Loads an optional
-  NetSuite/SuiteScript layer when the file is SuiteScript.
+    Deep review of one named file — structure and definition order, readability,
+    security, comment quality, alignment with the external APIs it calls, project
+    documentation coverage, and whether any part of it should be its own module.
+    Produces a severity-ranked report and changes nothing until asked. Use this
+    whenever the user points at a single file and wants a considered look:
+    "review-file this", "sanity-check ni_http.js", "take a closer look at this
+    module", "review this for security and comments", "does this match the docs?",
+    "is this documented under docs/?", "anything here that should be split out?".
+    Use it even when the ask is vague ("what do you make of this file?") — a
+    named file plus a request for an opinion is a file review. Loads an optional
+    NetSuite/SuiteScript layer when the file is SuiteScript.
 ---
 
 # Review file
@@ -28,11 +28,11 @@ proper file review goes deep on one file, and batching turns it into skimming.
 Load these only when they apply. Do not invent parallel standards — if a
 companion skill exists in the repo, it wins over your own instincts.
 
-| Situation | Load |
-|---|---|
-| File is SuiteScript / imports `N/*` | `references/netsuite.md` |
-| Repo has a `docs/` tree | `references/project-docs.md` |
-| Repo has `.agents/skills/keep-it-human/` | that skill, before writing or rewriting any comment text |
+| Situation                                                   | Load                                                      |
+| ----------------------------------------------------------- | --------------------------------------------------------- |
+| File is SuiteScript / imports `N/*`                         | `references/netsuite.md`                                  |
+| Repo has a `docs/` tree                                     | `references/project-docs.md`                              |
+| Repo has `.agents/skills/keep-it-human/`                    | that skill, before writing or rewriting any comment text  |
 | File is auth, HTTP, Suitelet/RESTlet or credential-adjacent | `.agents/skills/netsuite-owasp-secure-coding/` if present |
 
 ## Passes
@@ -98,7 +98,7 @@ user to ignore the real findings.
 
 - **Secrets**: no plain tokens in source, logs or error strings; correct secret
   API for the platform.
-- **Outbound calls**: HTTPS only; be explicit about *who* allowlists hosts — this
+- **Outbound calls**: HTTPS only; be explicit about _who_ allowlists hosts — this
   file or its caller. Ambiguity here is itself a finding.
 - **Logging**: no auth headers, request bodies, or secret-bearing URLs.
 - **Input trust**: record fields, script parameters, partner payloads, URL

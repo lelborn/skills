@@ -1,15 +1,15 @@
 ---
 name: keep-a-changelog
 description: >-
-  Write, update, or review a project's CHANGELOG.md following the Keep a Changelog
-  1.1.0 convention, with version numbers set by Semantic Versioning. Use this
-  whenever you add a changelog entry, log a change, turn commits or a freeform
-  list of changes into a changelog, decide whether a release is major/minor/patch,
-  mark a release as yanked, or audit an existing CHANGELOG.md for spec compliance.
-  Trigger on phrasings like "log this change", "what changed this release", "bump
-  the version", or a pasted commit list — don't wait for the word "changelog".
-  Cutting a release here means editing CHANGELOG.md (and proposing a version bump) —
-  not creating git tags or GitHub releases unless the user explicitly asks.
+    Write, update, or review a project's CHANGELOG.md following the Keep a Changelog
+    1.1.0 convention, with version numbers set by Semantic Versioning. Use this
+    whenever you add a changelog entry, log a change, turn commits or a freeform
+    list of changes into a changelog, decide whether a release is major/minor/patch,
+    mark a release as yanked, or audit an existing CHANGELOG.md for spec compliance.
+    Trigger on phrasings like "log this change", "what changed this release", "bump
+    the version", or a pasted commit list — don't wait for the word "changelog".
+    Cutting a release here means editing CHANGELOG.md (and proposing a version bump) —
+    not creating git tags or GitHub releases unless the user explicitly asks.
 ---
 
 # Keep a Changelog
@@ -62,17 +62,17 @@ Bump by the highest-impact change; the `semver` skill has the full logic and rea
 
 **At `1.0.0` and above** — the public API is a promise:
 
-| Release contains… | Bump |
-|---|---|
+| Release contains…                                                      | Bump      |
+| ---------------------------------------------------------------------- | --------- |
 | Anything **Removed**, or a **Changed** entry that breaks compatibility | **MAJOR** |
-| Any **Added**, or a **Deprecated**, entry (nothing breaking) | **MINOR** |
-| Only **Fixed** / **Security** | **PATCH** |
+| Any **Added**, or a **Deprecated**, entry (nothing breaking)           | **MINOR** |
+| Only **Fixed** / **Security**                                          | **PATCH** |
 
 **Under `0.y.z`** — no compatibility promise yet, so the whole scale slides down one slot (matching how npm `^` ranges resolve — see `semver`):
 
-| Release contains… | Bump |
-|---|---|
-| Anything **Removed**, or a compatibility-breaking **Changed** entry | **MINOR** (`0.3.1` → `0.4.0`) |
+| Release contains…                                                                               | Bump                          |
+| ----------------------------------------------------------------------------------------------- | ----------------------------- |
+| Anything **Removed**, or a compatibility-breaking **Changed** entry                             | **MINOR** (`0.3.1` → `0.4.0`) |
 | Only non-breaking entries — **Added** / **Changed** / **Deprecated** / **Fixed** / **Security** | **PATCH** (`0.3.1` → `0.3.2`) |
 
 One breaking change sets the level for the whole release. State your reasoning when proposing a bump, and flag that a 0.x version carries no compatibility guarantee. Cut `1.0.0` when the API is stable and in production.
@@ -93,6 +93,7 @@ When you cut a release, propose updating `package.json` to match the new version
 Updating the changelog is not permission to publish. **Never** create git tags, GitHub releases (`gh release create`), or push release commits unless the user explicitly asks — a push, merge, or "cut a release" in changelog terms does not imply any of that.
 
 When a release looks ready, stop after the changelog (and version proposal) and ask whether they want you to:
+
 - bump `package.json`
 - commit
 - tag
