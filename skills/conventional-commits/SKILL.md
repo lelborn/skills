@@ -9,7 +9,7 @@ Format commit messages to carry machine-readable meaning, per [Conventional Comm
 
 ## Format
 
-```
+```text
 <type>[optional scope][!]: <description>
 
 [optional body]
@@ -57,11 +57,11 @@ It's a SemVer **MAJOR** regardless of type (`fix!` still breaks). Prefer includi
 
 ## Examples
 
-```
+```text
 feat(lang): add Polish translation
 ```
 
-```
+```text
 fix: prevent racing of requests
 
 Introduce a request id and dismiss responses from any but the latest request.
@@ -69,7 +69,7 @@ Introduce a request id and dismiss responses from any but the latest request.
 Refs: #123
 ```
 
-```
+```text
 feat(api)!: send an email when a product ships
 
 BREAKING CHANGE: the shipment webhook no longer includes the deprecated
@@ -78,7 +78,7 @@ BREAKING CHANGE: the shipment webhook no longer includes the deprecated
 
 ## Reviewing a message
 
-Flag: a missing type or `: `; an empty description or one not right after the prefix; a body/footer not separated by a blank line; a footer token with a space (except `BREAKING CHANGE`); `BREAKING CHANGE` not uppercase; a breaking diff with no marker; a type that doesn't match the diff.
+Flag: a missing type or `:` after it; an empty description or one not right after the prefix; a body/footer not separated by a blank line; a footer token with a space (except `BREAKING CHANGE`); `BREAKING CHANGE` not uppercase; a breaking diff with no marker; a type that doesn't match the diff.
 
 ## CHANGELOG from history
 

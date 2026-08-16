@@ -11,7 +11,7 @@ A version is a compatibility promise about a **declared public API**: MAJOR = br
 
 ## Format
 
-```
+```text
 MAJOR.MINOR.PATCH[-PRERELEASE][+BUILD]
 ```
 
@@ -46,7 +46,7 @@ Mixed set: the highest-impact change decides the release — a single breaking c
 
 Official regex:
 
-```
+```text
 ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
@@ -71,7 +71,7 @@ Low to high: `1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.
 
 ## Compact output for another workflow
 
-```
+```text
 current: 0.3.2
 bump: patch
 next: 0.3.3

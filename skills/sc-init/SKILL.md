@@ -156,7 +156,7 @@ don't chase it.
 
 **`.prettierignore`**
 
-```
+```ignore
 # Dependencies & build output
 node_modules
 build
@@ -284,7 +284,7 @@ rewrite `devDependencies` wholesale. Leave the `"name"` field alone.
 Note it deliberately does **not** ignore `.agents`, `.claude` or `skills-lock.json` — those are committed,
 and are only excluded from Prettier.
 
-```
+```ignore
 # IDEs and editors
 .idea
 *.iml

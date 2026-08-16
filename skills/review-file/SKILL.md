@@ -39,7 +39,7 @@ companion skill exists in the repo, it wins over your own instincts.
 
 Track them so none get skipped:
 
-```
+```text
 File review on <path>:
 - [ ] 1. Orient
 - [ ] 2. Structure and order
@@ -159,7 +159,7 @@ Open with a verdict of one or two sentences — the honest overall read, not a
 warm-up. Then the sections below, in this order, dropping any that produced
 nothing:
 
-```
+```text
 **Verdict:** <one or two sentences>
 
 **Holds up well**

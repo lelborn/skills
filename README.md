@@ -19,7 +19,7 @@ npx skills add lelborn/skills --skill conventional-commits
 
 Add `-g` if you'd rather have them everywhere than in the one project.
 
-## Skills
+## What's here
 
 - **[conventional-commits](skills/conventional-commits/SKILL.md)** — Write git commit messages that follow the [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) spec.
 - **[keep-a-changelog](skills/keep-a-changelog/SKILL.md)** — Write, update, and review a `CHANGELOG.md` following [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/). Changelog and version proposal only; tags and GitHub releases need explicit approval.

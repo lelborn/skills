@@ -83,7 +83,7 @@ which is the intended starting point. Teams tune from there.
 **`.prettierignore`** — Prettier already skips `node_modules` and honours `.gitignore`; this covers the
 build and test artefacts worth being explicit about.
 
-```
+```ignore
 # Build output
 dist
 build

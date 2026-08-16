@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Prettier** — exact-version local install with `.prettierrc`, `.prettierignore`, `format` / `format:check` scripts, and workspace format-on-save via the official Prettier VS Code extension.
+- **markdownlint** — workspace config using markdownlint's Prettier style so formatting rules (including hard tabs) are left to Prettier; unlabeled fences given a language.
 - **.gitignore** — ignore OS junk, Node artefacts, secrets, and local skills CLI installs (`.agents`, `.claude`, `skills-lock.json`).
 - **conventional-commits** — commit messages that follow Conventional Commits v1.0.0, including type selection, scopes, breaking changes, and changelog generation.
 - **keep-a-changelog** — maintain a `CHANGELOG.md` following Keep a Changelog 1.1.0, with release cutting and compliance audits.
