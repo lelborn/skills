@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **package.json** — renamed to `lelborn-skills` and trimmed to repo metadata only (removed npm `files` field) so `npx skills` resolves to the CLI, not this repo, when run from the project directory.
+- **semver** — pre-1.0 (`0.y.z`) bumps now follow the shifted convention (breaking → minor, feature/fix → patch) to match npm `^` range behaviour, and the decision reasons from consumer impact instead of defaulting new features to a minor bump.
+- **keep-a-changelog** — 0.x version-picking now matches the shifted `semver` convention: a separate `0.y.z` bump table where non-breaking releases (including `Added`) are patch, not minor.
 
 ### Added
 

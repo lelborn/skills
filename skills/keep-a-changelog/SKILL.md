@@ -58,7 +58,9 @@ In this order when several apply: **Added** (new features), **Changed** (changes
 
 ## Picking the version
 
-Bump by the highest-impact change (the `semver` skill has the full logic):
+Bump by the highest-impact change; the `semver` skill has the full logic and reasoning steps.
+
+**At `1.0.0` and above** — the public API is a promise:
 
 | Release contains… | Bump |
 |---|---|
@@ -66,7 +68,14 @@ Bump by the highest-impact change (the `semver` skill has the full logic):
 | Any **Added**, or a **Deprecated**, entry (nothing breaking) | **MINOR** |
 | Only **Fixed** / **Security** | **PATCH** |
 
-One breaking change makes the whole release MAJOR. Below `1.0.0`, treat would-be MAJOR bumps as MINOR until the user declares `1.0.0`. State your reasoning when proposing a bump.
+**Under `0.y.z`** — no compatibility promise yet, so the whole scale slides down one slot (matching how npm `^` ranges resolve — see `semver`):
+
+| Release contains… | Bump |
+|---|---|
+| Anything **Removed**, or a compatibility-breaking **Changed** entry | **MINOR** (`0.3.1` → `0.4.0`) |
+| Only non-breaking entries — **Added** / **Changed** / **Deprecated** / **Fixed** / **Security** | **PATCH** (`0.3.1` → `0.3.2`) |
+
+One breaking change sets the level for the whole release. State your reasoning when proposing a bump, and flag that a 0.x version carries no compatibility guarantee. Cut `1.0.0` when the API is stable and in production.
 
 ## Version source
 
