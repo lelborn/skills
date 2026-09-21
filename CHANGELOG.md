@@ -28,3 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **challenge** — stress-test a plan or decision with sharp questions and a sharpened outcome.
 - **sc-init** — initialise a SuiteCloud Account Customization project with agent skills, Prettier/ESLint, and docs.
 - **tooling-init** — set up a JavaScript/TypeScript project's Prettier, ESLint, and Playwright tooling with ignore rules, IDE settings, and project-aware package.json scripts, after evaluating the project.
+- **gh-protect** — wizard that builds a GitHub repository ruleset (branch/tag/push) as JSON under `.github/.rulesets/`, then guides applying it via the UI or `gh api`; never changes repo settings unprompted.
+- **gh-templates** — scaffold `.github/` issue templates (bug/feature/chore) and a pull-request template in a Conventional-Commit house style, adapted to the project.
+- **gh-depbot** — configure `.github/dependabot.yml` from the repo's detected ecosystems, defaulting to weekly `chore` updates grouped by minor/patch.
+- **gh-issues** — working standard for writing and managing GitHub issues: duplicates, scope, Conventional-Commit titles, a verifiable "Done when", and closing discipline.
+- **gh-prs** — working standard for pull requests: branching, one logical change, Conventional-Commit titles, a real test plan, and merge discipline.
+- **docs-init** — scaffold a `.docs/` tree (index, flat ops docs, one subfolder per unit kind) sized to the project, establishing the convention `doc-it` and `doc-check` maintain.
+- **doc-it** — create or update one documentation page to match the repo's `.docs/` conventions, link to source, cross-link, and keep the index in sync.
+- **doc-check** — audit a `.docs/` tree for leaked secrets/IDs, drift, broken links, and coverage gaps, reporting severity-ranked findings without changing anything.
+- **archive-skill** — retire a skill to a tracked `.archive/` folder, delist it from the README, and log the change, without deleting it.

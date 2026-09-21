@@ -31,6 +31,15 @@ Add `-g` if you'd rather have them everywhere than in the one project.
 - **[challenge](skills/challenge/SKILL.md)** — Stress-test a plan, decision, or idea with one sharp question at a time, then land on a sharpened plan.
 - **[sc-init](skills/sc-init/SKILL.md)** — Initialise a NetSuite SuiteCloud (SDF) Account Customization project: agent skills, Prettier, ESLint, package.json scripts, .gitignore, README, docs, and CHANGELOG.
 - **[tooling-init](skills/tooling-init/SKILL.md)** — Set up Prettier, ESLint, and Playwright on a JavaScript/TypeScript project after evaluating what's already there. Safe to re-run.
+- **[gh-protect](skills/gh-protect/SKILL.md)** — Wizard for building a GitHub repository ruleset (branch/tag/push), saved as JSON to `.github/.rulesets/`. Produces the file and guides applying it; never changes repo settings without asking.
+- **[gh-templates](skills/gh-templates/SKILL.md)** — Scaffold `.github/` contribution templates — issue templates (bug/feature/chore) and a PR template — in a Conventional-Commit house style, adapted to the project.
+- **[gh-depbot](skills/gh-depbot/SKILL.md)** — Configure `.github/dependabot.yml` from the ecosystems actually in the repo, with weekly `chore` updates grouped by minor/patch to cut PR noise.
+- **[gh-issues](skills/gh-issues/SKILL.md)** — The working standard for writing and managing GitHub issues: search first, one concern, Conventional-Commit titles, a verifiable "Done when", no closing with open tasks.
+- **[gh-prs](skills/gh-prs/SKILL.md)** — The working standard for pull requests: branch off main, one logical change, Conventional-Commit titles, a real test plan, and never merging with unchecked tasks or unasked.
+- **[docs-init](skills/docs-init/SKILL.md)** — Scaffold a `.docs/` tree — an index, flat ops docs, and one subfolder per kind of unit — sized to the project. Sets the convention `doc-it` and `doc-check` maintain.
+- **[doc-it](skills/doc-it/SKILL.md)** — Create or update the doc for one target, matching the repo's `.docs/` conventions, linking to source, cross-linking, and keeping the index in sync.
+- **[doc-check](skills/doc-check/SKILL.md)** — Audit a `.docs/` tree for leaked secrets/IDs, drift, broken links, and coverage gaps. Severity-ranked report; changes nothing until you ask.
+- **[archive-skill](skills/archive-skill/SKILL.md)** — Retire a skill from this book without deleting it: move it to a tracked `.archive/`, delist it from the README, and log the change. Run it with `/archive-skill`.
 
 Changes are logged in the [changelog](CHANGELOG.md).
 
