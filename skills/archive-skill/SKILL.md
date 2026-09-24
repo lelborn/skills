@@ -1,6 +1,6 @@
 ---
 name: archive-skill
-description: Retire a skill from this book without deleting it — move its folder out of `skills/` into a tracked `.archive/` folder (created if missing) so the skills CLI stops serving it, delist it from the README, and log the change. Use when the user runs /archive-skill, or asks to archive, retire, shelve, mothball, or "stop publishing" one of this repo's own skills. Not deletion: the skill stays in the repo, restorable.
+description: Retire a skill from this book without deleting it — move its folder out of `skills/` into a tracked `.archive/` folder (created if missing) so the skills CLI stops serving it, delist it from the README, and log the change. Use when the user runs /archive-skill, or asks to archive, retire, shelve, mothball, or "stop publishing" one of this repo's own skills. Not deletion — the skill stays in the repo, restorable.
 argument-hint: Which skill to archive (its folder name under skills/)
 disable-model-invocation: true
 ---
